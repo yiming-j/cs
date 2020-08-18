@@ -13,7 +13,8 @@ int funC(int x) {
 }
 
 int funD(int x) {
-    return !(x & ~0xFFFFFF);
+    int mask = 0xFF << ((sizeof(int) - 1) << 3);
+    return !(x & mask);
 }
 
 int main() {
