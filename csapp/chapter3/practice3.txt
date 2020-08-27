@@ -8,3 +8,23 @@ $0x108  0x108
 260(%rcx, %rdx) 0x13
 0xFC(, %rcx, 4) 0x0xFF
 (%rax, %rdx, 4) 0x11
+
+3.2
+movl
+movw
+movb
+movb
+movq
+movw
+
+3.3
+寄存器寻址不能用 %ebx
+movl 4字节和 %rax 8字节不搭
+不能从内存到内存
+没有 %sl 寄存器
+不能从寄存器到立即数
+目标操作数大小不对应
+movb 1字节 %si 2字节
+
+
+
