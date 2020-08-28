@@ -26,5 +26,80 @@ movl 4字节和 %rax 8字节不搭
 目标操作数大小不对应
 movb 1字节 %si 2字节
 
+3.4
+movsbl (%rdi), %eax
+movl %eax, (%rsi)
 
+movsbl (%rdi), %eax
+movl %eax, (%rsi)
+
+movzbq (%rdi), %rax
+movq %rax, (%rsi)
+
+movl (%rdi), %eax
+movb %al, (%rsi)
+
+movl (%rdi), %eax
+movb %al, (%rsi)
+
+movsbw (%rdi), %ax
+movw %ax, (%rsi)
+
+3.5
+void decode1(long *xp, long *yp, long *zp) {
+    long x = *xp;
+    long y = *yp;
+    long z = *zp;
+    *yp = x;
+    *zp = y;
+    *xp = z;
+}
+
+3.6
+6 + x
+x + y
+x + 4y
+7 + 9x
+0xA + 4y
+9 + x + 2y
+
+3.7
+long t = 5 * x + 2* y + 8 * z
+
+3.8
+0x100   0x100
+0x108   0xA8
+0x118   0x110
+0x110   0x14
+%rcx    0x0
+%rax    0xFD
+
+3.9
+sal $4 %rax
+sar %cl %rax
+
+3.10
+long t1 = x | y;
+long t2 = t1 >> 3;
+long t3 = ~t2;
+long t4 = z - t3;
+
+3.11
+A. 给寄存器%rdx的值置为0
+B. movq $0, %rdx
+C. 
+xorq %rdx, %rdx 3字节
+xorl %edx, %edx 2字节
+movq $0, %rdx 7字节
+mvol $0, %edx 5字节
+
+3.12
+uremdiv:
+    movq %rdx, %r8
+    movq %rdi, %rax
+    movl $0, %edx
+    divq %rsi
+    movq %rax, (%r8)
+    movq %rdx, (%rcx)
+    ret
 
