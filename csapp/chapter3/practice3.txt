@@ -345,3 +345,98 @@ long rfun(unsigned long x) {
     long rv = rfun(nx);
     return rv + x;
 }
+
+3.36
+S   2   14  2 * i
+T   8   24  8 * i
+U   8   48  8 * i
+V   4   32  4 * i
+W   8   32  8 * i
+
+3.37
+S + 1   short*  xs + 2  leaq 2(%rdx), %rax
+S[3]    short   M[xs + 6]   movw 6(%rdx), %ax
+&S[i]   short*  xs + 2i  leaq (%rdx, %rcx, 2), %rax
+S[4 * i + 1]    short   M[xs + 8 * i + 2]   movw 2(%rdx, %rcx, 8), %ax
+S + i - 5   short*  xs + 2 * i - 10 leaq -10(%rdx, %rcx, 2), %rax
+
+3.38
+M = 5
+N = 7
+
+3.39
+
+3.40
+void fix_set_diag_opt(fix_matrix A, int val) {
+    int *Aptr = &A[0][0];
+    int result = 0
+    do {
+        *Aptr = val;
+        result += (N + 1);
+        Aptr += result;
+    } while (Aptr != N * (N + 1));
+}
+
+3.41
+A.
+p: 0
+s.x: 8
+s.y: 12
+next: 16
+B. 24
+C. 
+void sp_init(stuct prob *sp) {
+    sp->s.x = sp->s.y;
+    sp->p = &(sp->s.x);
+    sp->next = sp;
+}
+
+3.42
+A.
+long fun(struct ELE *ptr) {
+    long result = 0;
+    while (ptr) {
+        result += ptr->v;
+        ptr = ptr->p;
+    }
+    return result;
+}
+B. 单链表，求和
+
+3.43
+up->t1.v    short   movw 8(%rdi), %ax  
+                    movw %ax, (%rsi)
+&up->t1.w   char*   leaq 10(%rdi), %rax
+
+3.44
+A. i: 0, c: 4, j: 8, d: 12  16  4;
+B. i: 0, c: 4, d: 5, j: 8   16  8;
+C. w: 0, c: 6   10  2;
+D. w: 0, c: 16  40  8;
+E. a: 0, t: 24  40  8;
+
+3.45
+A. 0   8   16  24  28  32  40  48
+B. 56
+D. *a, c, g, e, h, b, d, f 40
+
+3.46
+A.
+00 00 00 00 00 40 00 76 返回地址
+01 23 45 67 89 AB CD EF %rbx
+
+                        %rsp
+B. 
+00 00 00 00 00 40 00 76 返回地址
+01 23 45 67 89 AB CD EF %rbx
+
+C.
+D. %rbx
+E. 
+malloc参数应为 strlen(buf) + 1
+检查返回值是否为空
+
+3.47
+A. 2^13
+B. 2^6
+
