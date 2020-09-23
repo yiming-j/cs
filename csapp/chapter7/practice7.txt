@@ -1,0 +1,28 @@
+7.1
+是  外部    m.o     .data
+是  全局    swap.o  .data
+是  全局    swap.o  COMMON
+是  全局    swap.o  .text
+否
+
+7.2
+A. main.1
+B. 
+错误
+C. x.2
+
+7.3
+gcc p.o libx.a
+gcc p.o libx.a liby.a
+gcc p.o libx.a liby.a libx.a
+
+7.4
+0x4004e8
+0x5
+
+7.5
+ADDR(s) = 0x4004d0
+ADDR(swap) = 0x4004e8
+r.offset = 0xa
+refaddr = 0x4004d0 + 0xa = 0x4004da
+*refptr = (unsigned) (0x4004e8 + (-4) - 0x4004da) = 0xa
