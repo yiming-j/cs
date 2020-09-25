@@ -1,0 +1,15 @@
+8.1
+1 0 1
+
+8.2
+A. p1: x = 2
+    p2: x = 1
+B. p2: x = 0
+
+8.3
+acbc abcc bacc
+
+8.4
+A. 6
+B. Hello 1 0 Bye 2 Bye
+
