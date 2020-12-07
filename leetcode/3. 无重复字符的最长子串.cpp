@@ -11,7 +11,7 @@ public:
                 ++j;
             }
             ans = max(ans, j - i);
-            i = max(i, pos[s[i]] + 1);
+            i = pos[s[j]] + 1;
         }
         return ans;
     }
