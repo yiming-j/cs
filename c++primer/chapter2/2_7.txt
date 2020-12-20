@@ -1,0 +1,4 @@
+a) Who goes with Fergus?(换行) string
+b) long double
+c) f后缀不能用于整型
+d) long double

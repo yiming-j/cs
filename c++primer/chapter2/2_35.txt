@@ -1,0 +1,5 @@
+j, int
+k, int常引用
+p, 指向int常量的指针
+j2, int常量
+k2, int常引用

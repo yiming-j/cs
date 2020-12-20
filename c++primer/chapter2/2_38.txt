@@ -1,0 +1,9 @@
+decltype 处理顶层const和引用的方式与 auto不同，decltype会将顶层const和引用保留起来。
+int i = 0, &r = i;
+//相同
+auto a = i;
+decltype(i) b = i;
+
+//不同 d 是一个 int&
+auto c = r;
+decltype(r) d = r;
