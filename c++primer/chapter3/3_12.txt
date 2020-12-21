@@ -1,0 +1,1 @@
+vector<string> svec = ivec;       // 不合法，类型不一样
