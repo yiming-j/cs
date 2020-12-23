@@ -1,0 +1,2 @@
+a) 每次循环都重新定义了iter
+b) if里不能访问status
