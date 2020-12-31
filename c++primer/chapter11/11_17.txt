@@ -1,0 +1,5 @@
+copy(v.begin(), v.end(), inserter(c, c.end()));
+copy(v.begin(), v.end(), back_inserter(c));
+copy(c.begin(), c.end(), inserter(v, v.end()));
+copy(c.begin(), c.end(), back_inserter(v));
+第二个调用不合法，因为 multiset 没有 push_back 方法。其他调用都合法。
