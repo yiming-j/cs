@@ -1,0 +1,1 @@
+release 成员的作用是放弃控制权并返回指针，因为在某一时刻只能有一个 unique_ptr 指向某个对象，unique_ptr 不能被赋值，所以要使用 release 成员将一个 unique_ptr 的指针的所有权传递给另一个 unique_ptr。而 shared_ptr 允许拷贝和赋值，允许有多个 shared_ptr 指向同一个对象，因此不需要 release 成员。

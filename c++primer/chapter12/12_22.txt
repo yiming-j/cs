@@ -1,0 +1,1 @@
+构造函数改为接受 const Strblob & , 然后给 Strblob 类添加两个 const 成员函数 cbegin 和 cend，返回 ConstStrBlobPtr。
