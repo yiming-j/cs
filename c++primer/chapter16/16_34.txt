@@ -1,0 +1,3 @@
+
+(a) 不合法。compare(const char [3], const char [6]), 两个实参类型不一致。
+(b) 合法。compare(const char [4], const char [4]).
