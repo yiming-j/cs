@@ -37,3 +37,23 @@ public:
         return len.size();
     }
 };
+
+class Solution {
+public:
+    int lengthOfLIS(vector<int>& nums) {
+        int n = nums.size();
+        if (n == 0) {
+            return 0;
+        }
+        vector<int> len{nums[0]};
+        for (int i = 1; i < n; ++i) {
+            auto it = lower_bound(len.begin(), len.end(), nums[i]);
+            if (it == len.end()) {
+                len.push_back(nums[i]);
+            } else {
+                *it = nums[i];
+            }
+        }
+        return len.size();
+    }
+};
