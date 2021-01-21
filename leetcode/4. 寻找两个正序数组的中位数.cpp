@@ -10,8 +10,8 @@ private:
         if (k == 1) {
             return min(nums1[l1], nums2[l2]);
         }
-        int right1 = min(l1, r1 + k / 2 - 1);
-        int right2 = min(l2, r2 + k / 2 - 1);
+        int right1 = min(r1, l1 + k / 2 - 1);
+        int right2 = min(r2, l2 + k / 2 - 1);
         if (nums1[right1] < nums2[right2]) {
             return findKth(nums1, nums2, right1 + 1, r1, l2, r2, k - (right1 - l1 + 1));
         }
