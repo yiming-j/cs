@@ -40,3 +40,32 @@ public:
         return ans;
     }
 };
+
+class Solution {
+public:
+    int trap(vector<int>& height) {
+        if (height.size() == 0) {
+            return 0;
+        }
+        int l = height.front(), r = height.back();
+        int i = 1, j = height.size() - 1;
+        int ret = 0;
+        while (i <= j) {
+            int h = min(l, r);
+            if (h == l) {
+                if (h > height[i]) {
+                    ret += h - height[i];
+                }
+                l = max(l, height[i]);
+                ++i;
+            } else {
+                if (h > height[j]) {
+                    ret += h - height[j];
+                }
+                r = max(r, height[j]);
+                --j;
+            }
+        }
+        return ret;
+    }
+};
